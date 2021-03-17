@@ -13,7 +13,7 @@ slug: system_extensions.html
 Sometimes your code might use some functionalities straight from the JVM, which are very hard to simulate. With Kotest System Extensions, these difficulties are made easy to mock and simulate, and your code can be tested correctly. After changing the system and using the extensions, the previous state will be restored.
 
 :::caution
-This code is sensitive to concurrency. Due to the JVM specification there can only be one instance of these extensions running (For example: Only one Environment map must exist). If you try to run more than one instance at a time, the result is unknown.
+This code is sensitive to concurrency. Due to the JVM specification there can only be one instance of these extensions running (For example: Only one Environment map must exist). If you're running test in parallel, to avoid an inconsistent result, it is advisable to annotate the spec with `@DoNotParallelize` (see [Parallelism](https://kotest.io/docs/framework/project-config.html#parallelism)).
 :::
 
 ### System Environment
