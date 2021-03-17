@@ -39,8 +39,8 @@ Or, with a listener for all the tests:
 ```
 
 :::caution
-`withContantNow` and `ConstantNowTestListener` are very sensitive to race conditions. Using them, mocks the static method `now` which is global to the whole JVM instance,
-if you're using it while running test in parallel, the results may be inconsistent.
+`withContantNow` and `ConstantNowTestListener` are very sensitive to race conditions. Using them, mocks the static method `now` which is global to the whole JVM instance.
+If you're running test in parallel, to avoid an inconsistent result, it is advisable to annotate the spec with `@DoNotParallelize` (see [Parallelism](https://kotest.io/docs/framework/project-config.html#parallelism)).
 :::
 
 
